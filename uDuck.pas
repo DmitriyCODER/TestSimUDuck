@@ -2,7 +2,7 @@ unit uDuck;
 
 interface
 uses
-  uFly, uQuack;
+  uFly, uQuack, Windows;
 
 type
 
@@ -13,18 +13,19 @@ type
   public
     procedure PerformQuack;
     procedure Swim;
-    procedure Display;
-    procedure PerformFly;    
+    procedure Display;virtual;abstract;
+    procedure PerformFly;
+  end;
+
+  TMullardDuck=class(TDuck)
+  public
+    constructor Create;
+    procedure Display;override;
   end;
 
 implementation
 
 { TDuck }
-
-procedure TDuck.Display;
-begin
-
-end;
 
 procedure TDuck.PerformFly;
 begin
@@ -38,7 +39,20 @@ end;
 
 procedure TDuck.Swim;
 begin
+  MessageBox(0,'All ducks float, even decoys!', 'Duck!', MB_OK);
+end;
 
+{ TMullardDuck }
+
+constructor TMullardDuck.Create;
+begin
+  QuackBehavior:=TQuack.Create;
+  FlyBehavior:=TFlyWithWings.Create;
+end;
+
+procedure TMullardDuck.Display;
+begin
+  MessageBox(0,'I`m a real Mallard duck', 'Mallard Duck!', MB_OK);
 end;
 
 end.
