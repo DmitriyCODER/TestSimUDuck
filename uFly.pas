@@ -1,6 +1,8 @@
 unit uFly;
 
 interface
+uses
+  Windows;
 
 type
 
@@ -24,7 +26,7 @@ implementation
 
 procedure TFlyWithWings.Fly;
 begin
-
+  MessageBox(0,'I`m flying!', 'FlyWithWings!', MB_OK);
 end;
 
 
@@ -32,7 +34,7 @@ end;
 
 procedure TFlyNoWay.Fly;
 begin
-
+  MessageBox(0,'I can`t fly', 'FlyNoWay!', MB_OK);
 end;
 
 end.
