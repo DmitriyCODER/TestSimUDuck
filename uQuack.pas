@@ -1,6 +1,8 @@
 unit uQuack;
 
 interface
+uses
+  Windows;
 
 type
 
@@ -29,21 +31,21 @@ implementation
 
 procedure TQuack.Quack;
 begin
-
+  MessageBox(0,'Quack', 'Quack', MB_OK);
 end;
 
 { TSqueak }
 
 procedure TSqueak.Quack;
 begin
-
+  MessageBox(0,'Squeak', 'Squeak', MB_OK);
 end;
 
 { TMuteQuack }
 
 procedure TMuteQuack.Quack;
 begin
-
+  MessageBox(0,'<<Silence>>', 'MuteQuack', MB_OK);
 end;
 
 end.
